@@ -12,7 +12,7 @@
         });
 
         board.syncPostIt(function (data) {
-            postit.create(data).render();
+            postit.create(data.postIt).render();
         });
 
         postit.setBoard(board);
@@ -23,7 +23,7 @@
                 currentPostIt.startEdit()
             }
         }, function (word) {
-                currentPostIt.editContent(word);
+            currentPostIt.editContent(word);
         },
         function () {
             currentPostIt.stopEdit();  
