@@ -40,7 +40,8 @@ function recognize() {
             result = event.results[0][0].transcript;
             console.log(result.toLowerCase());
             if (result.toLowerCase() == "go") {
-                console.log("WE TRYHARRRD !");
+                console.log("Post-it Cree !");
+                alert("Post-it Cree !");
                 recognizer2.start();
                 recognizer2.onstart = function(){
                     console.log("Recogniztion2 API started");
@@ -52,7 +53,8 @@ function recognize() {
             result2 = event.results[0][0].transcript;
             console.log("WTF SA MARCHE");
             post.push(result2.toLowerCase());
-            console.log(post);
+            console.log(post.join());
+            alert(post.join());
         }
 
     }
