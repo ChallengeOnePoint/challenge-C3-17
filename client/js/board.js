@@ -39,6 +39,6 @@
         },
     }
 
-    global.board = users;
+    global.board = board;
 
 }(this));
