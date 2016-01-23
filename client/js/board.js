@@ -15,7 +15,7 @@
             console.log('users::all emit');
             socket.emit('allPostIt');
         },        
-        syncPostIt: function (data, callback) {
+        syncPostIt: function (callback) {
             socket.on('newPostIt', function(data){
                 console.log('users::syncPostIt on');
                 callback(data);
