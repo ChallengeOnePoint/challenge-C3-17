@@ -48,7 +48,6 @@
                 if (result.toLowerCase() == words[0]) {
                     console.log("Post-it Cree !");
                     param[words[0]]();
-                    alert("Post-it Cree !");
                     recognizer2.start();
                     recognizer2.onstart = function(){
                         console.log("Recogniztion2 API started");
