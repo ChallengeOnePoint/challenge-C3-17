@@ -31,11 +31,14 @@
                 callback(data);
             });
         },        
-        deletePostIt: function (id, callback) {
+        deleteAllPostIt: function (callback) {
             socket.on('deletePostIt', function(id){
-                console.log('users::deletePostIt on');
+                console.log('users::deleteAllPostIt on');
                 callback(data);
             });
+        },                
+        deletePostIt: function (id) {
+            socket.emit('deletePostIt', id);
         },
     }
 
