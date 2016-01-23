@@ -15,6 +15,11 @@
             postit.create(data.postIt).render();
         });
 
+        board.deletePostIt(function (id) {
+            var n = document.querySelector('id-'+id);
+            n.parentNode.removeChild(n);
+        });
+
         postit.setBoard(board);
 
         recognize({

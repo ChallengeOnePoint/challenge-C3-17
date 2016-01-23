@@ -33,6 +33,10 @@
     display: none;
 }
 
+.postit .header button {
+    float: right;
+}
+
 .postit .content .textarea button{
     float: right;
 }

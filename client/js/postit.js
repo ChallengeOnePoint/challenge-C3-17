@@ -41,6 +41,9 @@
             this.instance.content += " " + w;
             this.render();
         },
+        deletePostIt: function () {
+            board.deletePostIt(this.instance.id);
+        },
         render: function () {
             var self = this;
 
@@ -62,9 +65,20 @@
                     self.startEdit();
                 });
 
-                this.dom.querySelector('button').addEventListener('click', function (e) {
+                this.dom.querySelector('.content button').addEventListener('click', function (e) {
                     self.stopEdit();
                 });
+
+                this.dom.querySelector('.header button').addEventListener('click', function (e) {
+                    self.deletePostIt();
+                    var n = document.querySelector('id-'+self.instance.id);
+                    n.parentNode.removeChild(n);
+                });
+
+                this.dom.style.top = (Math.round(Math.random() * 10) * 50) + "px";
+                this.dom.style.left = (Math.round(Math.random() * 10) * 50) + "px";
+
+                $(this.dom).draggable();
 
             }
 
