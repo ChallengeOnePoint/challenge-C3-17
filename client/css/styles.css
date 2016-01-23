@@ -1,0 +1,39 @@
+.hidden {
+    display: none;
+}
+
+.postit {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+}
+
+.postit .header { 
+    height: 50px;
+}
+
+.postit .content {
+    box-sizing: border-box;
+    height: 250px;
+    padding-left: 5px;
+    padding-right: 5px;
+    position: relative;
+}
+
+.postit .content div, .postit .content textarea {
+    position: absolute;
+    height: 100%;
+    width: 97%;
+}
+
+.postit .content textarea {
+    display: none;
+}
+
+.postit .footer {
+    height: 50px;
+}
+
+.postit .footer .by {
+    float:right;
+}
