@@ -38,6 +38,10 @@ io.sockets.on('connection', function (socket) {
         postIt.remove(idPostIt);
         socket.broadcast.emit('deletePostIt', {idPostIt: idPostIt});
     });
+    
+    socket.on('allPostIt', function () {
+        socket.emit('allPostIt', {allPostIt: postIt});
+    });
 });
 
 console.log('app running on port : ' + 3000);
