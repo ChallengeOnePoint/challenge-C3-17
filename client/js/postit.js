@@ -38,7 +38,7 @@
             board.newPostIt(this.instance);
         },
         editContent: function (w) {
-            instance.content += " " + w;
+            this.instance.content += " " + w;
             this.render();
         },
         render: function () {
