@@ -14,14 +14,14 @@
 
         postit.setBoard(board);
 
-        // recognize({
-        //     "go": function () {
-        //         currentPostIt = postit.create({id:utils.uuid(), content:"salut", author: "mathias"}).render();
-        //         currentPostIt.startEdit()
-        //     }
-        // }, function (word) {
-        //         currentPostIt.editContent(word);
-        // });
+        recognize({
+            "go": function () {
+                currentPostIt = postit.create({id:utils.uuid(), content:"salut", author: "mathias"}).render();
+                currentPostIt.startEdit()
+            }
+        }, function (word) {
+                currentPostIt.editContent(word);
+        });
 
 
         // postit.create({id:utils.uuid(), content:"salut", author: "mathias"}).render();        
