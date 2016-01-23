@@ -12,7 +12,7 @@
         });
 
         board.syncPostIt(function (data) {
-            postit.create(data).render();
+            postit.create(data.postIt).render();
         });
 
         postit.setBoard(board);
