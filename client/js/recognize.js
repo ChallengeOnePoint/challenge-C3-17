@@ -53,7 +53,7 @@
                         console.log("Recogniztion2 API started");
                     }
                 } else if (result.toLowerCase() != words[0]) {
-                    recognize();   
+                    recognize(param, wordcallback);   
                 }
             }
 
