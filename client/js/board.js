@@ -4,7 +4,7 @@
 
     board = {
         init: function () {
-            socket = io.connect('http://localhost:3000');
+            socket = io.connect('http://' + document.location.host + ':3000');
             console.log(socket);
         },
         allPostIt: function (callback) {
