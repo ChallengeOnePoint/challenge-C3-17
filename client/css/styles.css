@@ -24,10 +24,17 @@
     position: absolute;
     height: 100%;
     width: 97%;
+    display: block;
+    clear: both;
 }
 
-.postit .content textarea {
+.postit .content .textarea {
+    display: block;
     display: none;
+}
+
+.postit .content .textarea button{
+    float: right;
 }
 
 .postit .footer {
