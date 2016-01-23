@@ -3,7 +3,11 @@ var result;
 var result2;
 var post = [];
 
-function recognize() {
+function recognize(param) {
+
+    var words = Object.keys(param);
+    console.log(words);
+
     //speechRecognization interface is the heart of recognization API
     window.speechRecognition = window.speechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.webkitSpeechRecognition;
 
@@ -39,14 +43,14 @@ function recognize() {
             //event.results.length is the total number of words spoken in this session.
             result = event.results[0][0].transcript;
             console.log(result.toLowerCase());
-            if (result.toLowerCase() == "go") {
+            if (result.toLowerCase() == words[0]) {
                 console.log("Post-it Cree !");
                 alert("Post-it Cree !");
                 recognizer2.start();
                 recognizer2.onstart = function(){
                     console.log("Recogniztion2 API started");
                 }
-            } else if (result.toLowerCase() != "go") {
+            } else if (result.toLowerCase() != words[0]) {
                 recognize();   
             }
         }
