@@ -25,13 +25,13 @@ io.sockets.on('connection', function (socket) {
         socket.broadcast.emit('newPostIt', {postIt: objectPostIt});
     });
     
-    socket.on('updatePostIt', function (idPostIt, object) { // object is : {title: "my TITLE', description: "my description"};
+    socket.on('updatePostIt', function (object) { // object is : {title: "my TITLE', description: "my description"};
         var obj = {
-            title: object.title || postIt[idPostIt].title,
-            description: object.description || postIt[idPostIt].description
+            title: object.title || postIt[object.idPostIt].title,
+            description: object.description || postIt[object.idPostIt].description
         };
-        postIt[idPostIt] = obj;
-        socket.broadcast.emit('updatePostIt', {postIt: obj, idPostIt: idPostIt});
+        postIt[object.idPostIt] = obj;
+        socket.broadcast.emit('updatePostIt', {postIt: obj, idPostIt: object.idPostIt});
     });
     
     socket.on('deletePostIt', function (idPostIt) {
