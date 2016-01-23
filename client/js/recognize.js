@@ -63,7 +63,6 @@
                 post.push(result2.toLowerCase());
                 wordcallback(result2.toLowerCase());
                 console.log(post.join());
-                alert(post.join());
             }
 
         }
@@ -71,7 +70,8 @@
         recognizer2.onend = function(){
             recognizer2 = null;
             console.log("Recogniztion2 API stopped");
-            param[words[2]]();
+            end();
+            recognize(param, wordcallback, end);
         }
         //fired when recognization is stopped manually or automatically.
         recognizer.onend = function(){

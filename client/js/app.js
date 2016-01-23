@@ -6,21 +6,27 @@
         board.init();
         board.allPostIt(function (data) {
             console.log(data);
-            data.forEach(function (d) {
-                postit.create(d).render();
+            Object.keys(data).forEach(function (k) {
+                postit.create(data[k]).render();
             });
         });
 
+        board.syncPostIt(function (data) {
+            postit.create(data).render();
+        });
 
         postit.setBoard(board);
 
         recognize({
-            "go": function () {
-                currentPostIt = postit.create({id:utils.uuid(), content:"salut", author: "mathias"}).render();
+            "ok": function () {
+                currentPostIt = postit.create({id:utils.uuid(), content:"", author: ""}).render();
                 currentPostIt.startEdit()
             }
         }, function (word) {
-                currentPostIt.editContent(word);
+            currentPostIt.editContent(word);
+        },
+        function () {
+            currentPostIt.stopEdit();  
         });
 
 
