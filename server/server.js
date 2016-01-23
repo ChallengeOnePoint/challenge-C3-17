@@ -49,6 +49,15 @@ io.sockets.on('connection', function (socket) {
     socket.on('allPostIt', function () {
         socket.emit('allPostIt', {allPostIt: postIt});
     });
+    
+    // TESTING \\
+    socket.on('onEdit', function (idPostEdit) {
+       socket.broadcast.emit('onEdit', {id: idPostEdit}); 
+    });
+    
+    socket.on('endEdit', function (idPostEdit) {
+        socket.broadcast.emit('endEdit', idPostEdit);
+    });
 });
 
 console.log('app running on port : ' + 3000);
