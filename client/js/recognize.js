@@ -5,7 +5,7 @@
     var result2;
     var post = [];
 
-    function recognize(param) {
+    function recognize(param, wordcallback) {
 
         var words = Object.keys(param);
         console.log(words);
@@ -47,6 +47,7 @@
                 console.log(result.toLowerCase());
                 if (result.toLowerCase() == words[0]) {
                     console.log("Post-it Cree !");
+                    param[words[0]]();
                     alert("Post-it Cree !");
                     recognizer2.start();
                     recognizer2.onstart = function(){
@@ -61,6 +62,7 @@
                 result2 = event.results[0][0].transcript;
                 console.log("WTF SA MARCHE");
                 post.push(result2.toLowerCase());
+                wordcallback(result2.toLowerCase());
                 console.log(post.join());
                 alert(post.join());
             }
