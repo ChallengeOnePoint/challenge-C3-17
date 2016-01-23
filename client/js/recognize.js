@@ -46,6 +46,8 @@ function recognize() {
                 recognizer2.onstart = function(){
                     console.log("Recogniztion2 API started");
                 }
+            } else if (result.toLowerCase() != "go") {
+                recognize();   
             }
         }
 
