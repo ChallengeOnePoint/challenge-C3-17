@@ -5,7 +5,7 @@
     var result2;
     var post = [];
 
-    function recognize(param, wordcallback) {
+    function recognize(param, wordcallback, end) {
 
         var words = Object.keys(param);
         console.log(words);
@@ -53,7 +53,7 @@
                         console.log("Recogniztion2 API started");
                     }
                 } else if (result.toLowerCase() != words[0]) {
-                    recognize(param, wordcallback);   
+                    recognize(param, wordcallback, end);   
                 }
             }
 
@@ -71,6 +71,7 @@
         recognizer2.onend = function(){
             recognizer2 = null;
             console.log("Recogniztion2 API stopped");
+            param[words[2]]();
         }
         //fired when recognization is stopped manually or automatically.
         recognizer.onend = function(){
