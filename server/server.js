@@ -47,7 +47,8 @@ io.sockets.on('connection', function (socket) {
     });
     
     socket.on('allPostIt', function () {
-        socket.emit('allPostIt', {allPostIt: postIt});
+        console.log(postIt);
+        socket.emit('allPostIt', postIt);
     });
     
     // TESTING \\
